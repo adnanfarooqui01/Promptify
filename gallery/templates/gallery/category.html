@@ -2,39 +2,43 @@
 {% block content %}
 
 <!-- ✅ Category Banner -->
-<section class="text-center mb-5 p-5 rounded shadow-sm" 
-         style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+<section class="category-banner">
     <h2 class="fw-bold">{{ category.name }}</h2>
     <p class="lead">{{ category.description }}</p>
 </section>
 
 <!-- ✅ Photos in Category -->
 <!-- ✅ Photos in Category -->
-<section>
-    <h3 class="mb-4">Photos in {{ category.name }}</h3>
-    <div class="row">
+<section class="photo-section">
+    <div class="masonry-grid">
         {% for photo in images %}
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card shadow-lg h-100 border-0">
-                    <!-- Clickable image -->
-                    <a href="{% url 'image_detail' photo.pk %}">
-                        <img src="{{ photo.image.url }}" class="card-img-top rounded-top" alt="{{ photo.title }}">
+            <div class="grid-item">
+                <div class="photo-wrapper">
+                    <a href="{% url 'image_detail' photo.pk %}" class="photo-link">
+                        <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
                     </a>
 
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-semibold">{{ photo.title }}</h5>
-                        <p class="text-muted small">{{ photo.like }} Likes</p>
-                        <button class="btn btn-light btn-sm copy-btn" data-prompt="{{ photo.prompt }}">
-                            📋 Copy Prompt
-                        </button>
-                    </div>
+                    <!-- Copy Prompt Button -->
+                    <button class="copy-btn" data-prompt="{{ photo.prompt }}">
+                        <i class="bi bi-clipboard"></i>
+                    </button>
+
+                    {% comment %} <!-- Photo Info -->
+                    <div class="photo-info">
+                        <h5>{{ photo.title }}</h5>
+                        <span class="category-tag">{{ photo.category.name }}</span>
+                    </div> {% endcomment %}
                 </div>
             </div>
         {% empty %}
-            <p>No photos available in this category</p>
+            <div class="no-results">
+                <i class="bi bi-image"></i>
+                <h3>No photos available in this category</h3>
+            </div>
         {% endfor %}
     </div>
 </section>
+
 
 
 {% endblock %}

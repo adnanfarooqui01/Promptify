@@ -30,9 +30,6 @@ def image_detail(request, pk):
     image = get_object_or_404(ImagePrompt, pk=pk)
     return render(request, 'gallery/image_detail.html', {'image': image})
 
-def about(request):
-    return render(request, 'about.html')
 
 
-def contact(request):
-    return render(request, 'contact.html')
+

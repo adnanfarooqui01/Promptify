@@ -27,7 +27,7 @@
                 <span class="logo-text">Promptify</span>
             </a>
 
-            <!-- Search Bar -->
+            {% comment %} <!-- Search Bar -->
             <div class="search-wrapper">
                 <form method="get" action="{% url 'home' %}" class="search-form">
                     <button type="submit" class="search-button">
@@ -39,14 +39,14 @@
                            placeholder="Search photos & prompts..."
                            value="{{ request.GET.search }}">
                 </form>
-            </div>
+            </div> {% endcomment %}
 
             <!-- Right Navigation -->
-            <nav class="header-nav">
+            {% comment %} <nav class="header-nav">
                 <a href="{% url 'about' %}" class="nav-link">About</a>
                 <a href="{% url 'contact' %}" class="nav-link">Contact</a>
             </nav>
-        </div>
+        </div> {% endcomment %}
 
         <!-- Category Navigation -->
         <nav class="category-nav">
