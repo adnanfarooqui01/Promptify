@@ -1,0 +1,35 @@
+{% extends "gallery/base.html" %}
+{% block content %}
+
+<!-- Photo Grid (Masonry Layout) -->
+<section class="photo-section">
+    <div class="masonry-grid">
+        {% for photo in trending_photos %}
+            <div class="grid-item">
+                <div class="photo-wrapper">
+                    <a href="{% url 'image_detail' photo.pk %}" class="photo-link">
+                        <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
+                    </a>
+                    
+                    <!-- Copy Prompt Button -->
+                    <button class="copy-btn" data-prompt="{{ photo.prompt }}">
+                        <i class="bi bi-clipboard"></i>
+                    </button>
+                    
+                    <!-- Photo Info -->
+                    <div class="photo-info">
+                        <h5>{{ photo.title }}</h5>
+                        <span class="category-tag">{{ photo.category.name }}</span>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="no-results">
+                <i class="bi bi-image"></i>
+                <h3>No trending photos</h3>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

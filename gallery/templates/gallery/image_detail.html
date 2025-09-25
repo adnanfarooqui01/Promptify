@@ -1,0 +1,31 @@
+{% extends "gallery/base.html" %}
+{% block content %}
+
+<div class="container my-5">
+    <div class="row">
+        <!-- Image -->
+        <div class="col-md-7 mb-4">
+            <img src="{{ image.image.url }}" class="img-fluid rounded shadow-lg" alt="{{ image.title }}">
+        </div>
+
+        <!-- Info -->
+        <div class="col-md-5">
+            <h2 class="fw-bold">{{ image.title }}</h2>
+            <p class="text-muted mb-2">Category: 
+                <a href="{% url 'category' image.category.slug %}" class="text-decoration-none">
+                    {{ image.category.name }}
+                </a>
+            </p>
+            <p><strong>Likes:</strong> {{ image.like }}</p>
+            
+            <button class="btn btn-primary copy-btn mb-3" data-prompt="{{ image.prompt }}">
+                📋 Copy Prompt
+            </button>
+
+            <h5 class="mt-4">Prompt</h5>
+            <p class="p-3 rounded" style="background-color: #f1f1f1;">{{ image.prompt }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "gallery/base.html" %}
+{% block content %}
+
+<!-- ✅ Category Banner -->
+<section class="text-center mb-5 p-5 rounded shadow-sm" 
+         style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+    <h2 class="fw-bold">{{ category.name }}</h2>
+    <p class="lead">{{ category.description }}</p>
+</section>
+
+<!-- ✅ Photos in Category -->
+<!-- ✅ Photos in Category -->
+<section>
+    <h3 class="mb-4">Photos in {{ category.name }}</h3>
+    <div class="row">
+        {% for photo in images %}
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card shadow-lg h-100 border-0">
+                    <!-- Clickable image -->
+                    <a href="{% url 'image_detail' photo.pk %}">
+                        <img src="{{ photo.image.url }}" class="card-img-top rounded-top" alt="{{ photo.title }}">
+                    </a>
+
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-semibold">{{ photo.title }}</h5>
+                        <p class="text-muted small">{{ photo.like }} Likes</p>
+                        <button class="btn btn-light btn-sm copy-btn" data-prompt="{{ photo.prompt }}">
+                            📋 Copy Prompt
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>No photos available in this category</p>
+        {% endfor %}
+    </div>
+</section>
+
+
+{% endblock %}
