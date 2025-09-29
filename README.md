@@ -1,4 +1,4 @@
-## Promptify
+# Promptify
 
 **Promptify** is a full-stack web application built using **Django**.  
 It is designed to provide a platform for browsing, searching, and discovering prompts and photos in a clean, minimal UI. 
@@ -6,7 +6,7 @@ The website serves as a creative library where users can find high-quality promp
 
 ---
 
-## Features
+# Features
 
 -  **Search with live suggestions** (by category, prompt, or keyword)  
 -  **Responsive masonry-style photo grid** (different dimensions fit naturally)  
@@ -17,7 +17,7 @@ The website serves as a creative library where users can find high-quality promp
 
 ---
 
-## Technologies Used
+# Technologies Used
 
 - **Django** – Backend framework (Python)  
 - **SQLite / PostgreSQL** – Database (depending on setup)  
@@ -28,44 +28,44 @@ The website serves as a creative library where users can find high-quality promp
 
 ---
 
-## Getting Started
+# Getting Started
 
 To run **Promptify** locally:
 
-# 1. Clone the repository
+## 1. Clone the repository
 
     git clone https://github.com/adnanfarooqui01/Promptify.git
     cd promptify
 
-# 2. Create and activate a virtual environment
+## 2. Create and activate a virtual environment
 
     python -m venv venv
    
-  # Activate it
+  ### Activate it
      venv\Scripts\activate      # On Windows
      source venv/bin/activate   # On Mac/Linux
       
-# 3. Install dependencies
+## 3. Install dependencies
 
      pip install -r requirements.txt
 
-# 4. Set up database
+## 4. Set up database
 
     python manage.py migrate
 
-# 5. Create superuser (optional, for admin access)
+## 5. Create superuser (optional, for admin access)
 
      python manage.py createsuperuser
 
 
-# 6. Run the development server
+## 6. Run the development server
 
      python manage.py runserver
      Navigate to http://127.0.0.1:8000 in your browser 
 
 ---
 
-## Project Structure
+# Project Structure
 
 promptify/
 │── gallery/   # Main Django app (views, models, templates)
@@ -76,7 +76,7 @@ promptify/
 
 ---
 
-## Roadmap
+# Roadmap
 
 ✅ Basic photo browsing
 ✅ Categories & About page
