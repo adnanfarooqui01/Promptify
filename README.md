@@ -4,7 +4,7 @@
 It is designed to provide a platform for browsing, searching, and discovering prompts and photos in a clean, minimal UI. 
 The website serves as a creative library where users can find high-quality prompts to generate unique images using any AI generative tool of their choice.
 
-
+---
 
 ## Features
 
@@ -15,7 +15,7 @@ The website serves as a creative library where users can find high-quality promp
 -  **User-friendly interface**  
 -  **Responsive design for all devices**  
 
-
+---
 
 ## Technologies Used
 
@@ -26,7 +26,7 @@ The website serves as a creative library where users can find high-quality promp
 - **JavaScript (AJAX)** – Live search suggestions  
 - **HTML5 + Django Templates** – Frontend rendering  
 
-
+---
 
 ## Getting Started
 
@@ -34,7 +34,7 @@ To run **Promptify** locally:
 
 # 1. Clone the repository
 
-    git clone https://github.com/your-username/promptify.git
+    git clone https://github.com/adnanfarooqui01/Promptify.git
     cd promptify
 
 # 2. Create and activate a virtual environment
@@ -63,15 +63,18 @@ To run **Promptify** locally:
      python manage.py runserver
      Navigate to http://127.0.0.1:8000 in your browser 
 
+---
+
 ## Project Structure
 
 promptify/
-│── gallery/            # Main Django app (views, models, templates)
-│── static/             # Static files (CSS, JS, images)
-│── templates/          # HTML templates
-│── db.sqlite3          # Database (SQLite by default)
-│── manage.py           # Django project manager
+│── gallery/   # Main Django app (views, models, templates)
+│── static/   # Static files (CSS, JS, images)
+│── templates/   # HTML templates
+│── db.sqlite3   # Database (SQLite by default)
+│── manage.py   # Django project manager
 
+---
 
 ## Roadmap
 
@@ -81,3 +84,10 @@ promptify/
 🔄 User authentication (Coming soon)
 🔄 Upload prompts & photos (Coming soon)
 🔄 Like / Save collections (Future feature)
+
+---
+
+## License
+
+You’re free to use, modify, and distribute it with attribution.
+
